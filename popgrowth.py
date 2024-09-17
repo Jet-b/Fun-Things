@@ -17,7 +17,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
 n_generations = 100
-r_values = np.linspace(2.0, 3.0, 50)  # More r values to get smooth separation
+r_values = np.linspace(0, 3.0, 50)  # More r values to get smooth separation
 
 for r in r_values:
     population = generate_population_growth(r, n_generations)
