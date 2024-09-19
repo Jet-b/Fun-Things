@@ -4,9 +4,11 @@ import numpy as np
 
 x0 = 0.5
 
+# recursive function to plot
 def calc(x, r):
     return r * x * (1 - x)
 
+# generate a list of population growth
 def generate_population_growth(r, n):
     x = [x0]
     for i in range(n):
@@ -16,15 +18,16 @@ def generate_population_growth(r, n):
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
+# set the number of generations and r values to test as a list
 n_generations = 100
-r_values = np.linspace(0, 3.0, 50)  # More r values to get smooth separation
+r_values = np.linspace(0, 3.0, 50) 
 
 for r in r_values:
     population = generate_population_growth(r, n_generations)
     generations = np.arange(n_generations + 1)
     r_series = np.full_like(generations, r*100)
     
-    # Plot with r on Y-axis, generations on X-axis, and population on Z-axis
+    #           x            y          z
     ax.plot(generations, r_series, population)
 
 
