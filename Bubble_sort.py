@@ -15,7 +15,7 @@ pygame.display.set_caption("Bubble Sort")
 
 WHITE = (255, 255, 255)
 
-cmap = cm.plasma
+cmap = cm.viridis
 
 def get_color_from_cmap(value, cmap):
     normalized_value = value/ HEIGHT
@@ -76,7 +76,7 @@ if __name__ == "__main__":
             lst = bubble_sort_once(lst)
         
         screen.fill(WHITE)
-        draw_list_as_segments(lst)
+        draw_list_as_points(lst)
         
         pygame.display.flip()
         
